@@ -20,8 +20,8 @@ export const site = {
     telegram: '',
   },
 
-  scheduleLines: ['Пн–Сб: с 10:00 до 21:00', 'Вс: с 11:00 до 20:00'] as const,
-  scheduleNote: 'Уточняйте время по телефону',
+  scheduleLines: ['Ежедневно: 09:00–20:00'] as const,
+  scheduleNote: '',
 
   serviceCategories: priceList as ServiceCategory[],
 
@@ -35,7 +35,7 @@ export const site = {
     'Предварительная запись',
   ],
 
-  payment: 'Наличные, карта, перевод',
+  payment: '', // отображаем фиксированно: Наличными, Картой
 
   /** Награда Яндекс.Карт */
   award: 'Хорошее место 2026',

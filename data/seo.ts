@@ -1,8 +1,8 @@
 import { site } from './site'
 
 export function siteMetaDescription(): string {
-  const sched = `${site.scheduleLines.join('. ')}. ${site.scheduleNote}.`
-  return `Шиномонтаж ${site.name} на ${site.address.street}. ${sched} Балансировка, прокатка дисков, ремонт. Тел. ${site.contacts.phone}.`
+  const sched = [site.scheduleLines.join('. '), site.scheduleNote].filter(Boolean).join('. ')
+  return `Шиномонтаж ${site.name} на ${site.address.street}. ${sched ? sched + '. ' : ''}Балансировка, прокатка дисков, ремонт. Тел. ${site.contacts.phone}.`
 }
 
 export function organizationJsonLd(): Record<string, unknown> {
@@ -31,14 +31,8 @@ export function organizationJsonLd(): Record<string, unknown> {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '10:00',
-        closes: '21:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Sunday',
-        opens: '11:00',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '09:00',
         closes: '20:00',
       },
     ],

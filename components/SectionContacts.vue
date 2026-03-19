@@ -11,7 +11,7 @@ import { site } from '~/data/site'
       <p class="mx-auto mt-4 max-w-2xl text-center text-site-muted">
         Свяжитесь с нами удобным способом
       </p>
-      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:max-w-4xl lg:mx-auto">
         <div class="rounded-2xl border border-site-border bg-site-surface p-6">
           <p class="text-sm font-medium text-site-muted">Телефон</p>
           <a

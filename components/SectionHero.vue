@@ -11,7 +11,7 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
         :alt="site.name"
         width="200"
         height="64"
-        class="logo-on-dark mx-auto mb-6 h-20 w-auto object-contain md:h-28"
+        class="logo-on-dark mx-auto mb-6 h-20 w-auto rounded-2xl object-contain md:h-28"
       />
       <h1 class="sr-only">{{ site.name }}</h1>
       <div

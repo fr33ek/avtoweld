@@ -62,11 +62,10 @@ const featuresWithIcons = computed(() =>
   })),
 )
 
-const paymentItems = computed(() => {
-  const s = site.payment || ''
-  if (!s) return []
-  return s.split(/[, и]+/).map((name: string) => name.trim()).filter(Boolean)
-})
+const paymentItems = [
+  { name: 'Наличными', icon: 'cash', bgClass: 'bg-payment-cash', textClass: 'text-payment-cash' },
+  { name: 'Картой', icon: 'card', bgClass: 'bg-payment-card', textClass: 'text-payment-card' },
+] as const
 </script>
 
 <template>
@@ -84,7 +83,7 @@ const paymentItems = computed(() => {
           :key="i"
           class="flex items-center gap-4 rounded-2xl border border-site-border bg-site-card px-5 py-4"
         >
-          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-site-accent/20 text-site-accent">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal-soft text-teal">
             <svg class="h-6 w-6" v-bind="svgAttrs">
               <template v-for="(shape, si) in row.shapes" :key="si">
                 <path v-if="shape.tag === 'path'" v-bind="shape.attrs" />
@@ -96,23 +95,28 @@ const paymentItems = computed(() => {
         </li>
       </ul>
 
-      <div v-if="paymentItems.length" class="mt-14 pt-10 border-t border-site-border">
+      <div class="mt-14 pt-10 border-t border-site-border">
         <p class="mb-6 text-center text-sm font-medium uppercase tracking-wider text-site-muted">
           Оплата
         </p>
         <ul class="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
           <li
-            v-for="(name, i) in paymentItems"
+            v-for="(item, i) in paymentItems"
             :key="i"
             class="flex items-center gap-3 rounded-2xl border border-site-border bg-site-card px-5 py-4"
           >
-            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-site-accent/20 text-site-accent">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M12 8v8M8 12h8" />
+            <span :class="['flex h-12 w-12 shrink-0 items-center justify-center rounded-full', item.bgClass, item.textClass]">
+              <svg v-if="item.icon === 'cash'" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 8h20v12H2V8z" />
+                <path d="M12 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                <path d="M2 12h2M20 12h2" />
+              </svg>
+              <svg v-else-if="item.icon === 'card'" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <path d="M2 10h20" />
               </svg>
             </span>
-            <span class="text-white">{{ name }}</span>
+            <span class="text-white">{{ item.name }}</span>
           </li>
         </ul>
       </div>

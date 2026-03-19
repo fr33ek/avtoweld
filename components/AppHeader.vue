@@ -20,7 +20,7 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
           :alt="site.name"
           width="140"
           height="44"
-          class="logo-on-dark h-10 w-auto object-contain md:h-12"
+          class="logo-on-dark h-10 w-auto rounded-2xl object-contain md:h-12"
           fetchpriority="high"
         />
       </NuxtLink>

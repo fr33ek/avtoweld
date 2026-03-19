@@ -18,6 +18,15 @@ body {
   --shadow-neon: 0 0 20px rgb(176 48 80 / 0.35), 0 0 40px rgb(176 48 80 / 0.2);
   --color-site-green-neon: #50c878;
   --shadow-green-neon: 0 0 12px rgb(80 200 120 / 0.4), 0 0 24px rgb(80 200 120 / 0.2);
+  /* Бирюзовый для иконок преимуществ */
+  --color-teal: #2dd4bf;
+  --color-teal-soft: #5eead4;
+  --color-teal-bg: rgb(45 212 191 / 0.2);
+  /* Оплата: наличные — тёплый тон, карта — бирюзовый */
+  --color-payment-cash: #f59e0b;
+  --color-payment-cash-bg: rgb(245 158 11 / 0.2);
+  --color-payment-card: #14b8a6;
+  --color-payment-card-bg: rgb(20 184 166 / 0.2);
 }
 
 @layer utilities {
@@ -33,11 +42,25 @@ body {
   .shadow-green-neon {
     box-shadow: var(--shadow-green-neon);
   }
-  .logo-on-dark {
-    filter: invert(1) drop-shadow(0 0 10px rgb(176 48 80 / 0.5)) drop-shadow(0 0 24px rgb(176 48 80 / 0.3));
-    transition: filter 0.2s ease;
+  .bg-teal-soft {
+    background-color: var(--color-teal-bg);
   }
-  .logo-on-dark:hover {
-    filter: invert(1) drop-shadow(0 0 14px rgb(176 48 80 / 0.7)) drop-shadow(0 0 32px rgb(176 48 80 / 0.4));
+  .text-teal {
+    color: var(--color-teal);
+  }
+  .bg-payment-cash {
+    background-color: var(--color-payment-cash-bg);
+  }
+  .text-payment-cash {
+    color: var(--color-payment-cash);
+  }
+  .bg-payment-card {
+    background-color: var(--color-payment-card-bg);
+  }
+  .text-payment-card {
+    color: var(--color-payment-card);
+  }
+  .logo-on-dark {
+    filter: invert(1);
   }
 }
