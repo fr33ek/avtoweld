@@ -75,27 +75,20 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
           :href="`tel:${site.contacts.phoneRaw}`"
           class="inline-flex items-center gap-2 rounded-2xl bg-site-accent px-6 py-3 font-medium text-white shadow-neon transition hover:bg-site-accent-hover hover:shadow-neon"
         >
-          <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>
+          <Icon name="lucide:phone" class="h-5 w-5 shrink-0" aria-hidden="true" />
           {{ site.contacts.phone }}
         </a>
         <a
           href="#contacts"
           class="inline-flex items-center gap-2 rounded-2xl border border-site-border bg-site-card px-6 py-3 font-medium text-white transition hover:border-site-accent/50"
         >
-          <svg class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-          </svg>
+          <Icon name="lucide:map-pin" class="h-5 w-5 shrink-0" aria-hidden="true" />
           Адрес и карта
         </a>
       </div>
       <div class="mt-8 mx-auto inline-flex items-center gap-3 rounded-2xl border border-site-border bg-site-card px-4 py-3">
         <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-site-accent/20 text-site-accent">
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 6v6l4 2" />
-          </svg>
+          <Icon name="lucide:clock" class="h-5 w-5" aria-hidden="true" />
         </span>
         <span class="flex min-w-0 flex-col gap-0.5 text-left text-sm leading-snug text-white">
           <span v-for="(line, i) in site.scheduleLines" :key="i">{{ line }}</span>

@@ -47,4 +47,8 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: true },
+  modules: ['@nuxt/icon'],
+  icon: {
+    collections: ['lucide'],
+  },
 })

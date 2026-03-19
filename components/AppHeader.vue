@@ -38,9 +38,7 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
           :href="`tel:${site.contacts.phoneRaw}`"
           class="inline-flex items-center gap-2 rounded-2xl bg-site-accent px-4 py-2 text-sm font-medium text-white shadow-neon transition hover:bg-site-accent-hover"
         >
-          <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>
+          <Icon name="lucide:phone" class="h-4 w-4 shrink-0" aria-hidden="true" />
           {{ site.contacts.phone }}
         </a>
       </nav>
@@ -51,22 +49,7 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
         aria-label="Меню"
         @click="open = !open"
       >
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            v-if="!open"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-          <path
-            v-else
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
+        <Icon :name="open ? 'lucide:x' : 'lucide:menu'" class="h-6 w-6" aria-hidden="true" />
       </button>
     </div>
 
@@ -89,9 +72,7 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
           class="inline-flex items-center justify-center gap-2 rounded-2xl bg-site-accent px-4 py-2 font-medium text-white"
           @click="open = false"
         >
-          <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>
+          <Icon name="lucide:phone" class="h-4 w-4 shrink-0" aria-hidden="true" />
           {{ site.contacts.phone }}
         </a>
       </nav>

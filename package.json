@@ -9,11 +9,13 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@nuxt/icon": "^2.2.1",
     "nuxt": "^4.0.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.98",
     "@tailwindcss/vite": "^4.2.0",
     "tailwindcss": "^4.2.0"
   }

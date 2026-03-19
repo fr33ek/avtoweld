@@ -148,9 +148,7 @@ onMounted(() => {
           class="mt-8 flex flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl border border-site-border bg-site-card py-12 transition hover:border-site-accent/50"
         >
           <span class="text-site-muted">
-            <svg class="mx-auto h-14 w-14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
+            <Icon name="lucide:map-pin" class="mx-auto h-14 w-14" aria-hidden="true" />
           </span>
           <span class="text-lg font-medium text-white">
             {{ mapError ? 'Открыть карту в Яндекс.Картах' : 'Открыть в Яндекс.Картах' }}
@@ -169,9 +167,7 @@ onMounted(() => {
           rel="noopener"
           class="inline-flex items-center justify-center gap-2 rounded-2xl bg-site-accent px-4 py-2 font-medium text-white hover:bg-site-accent-hover"
         >
-          <svg class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-          </svg>
+          <Icon name="lucide:map-pin" class="h-5 w-5 shrink-0" aria-hidden="true" />
           Открыть в Яндекс.Картах
         </a>
       </p>
