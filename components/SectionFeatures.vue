@@ -2,9 +2,9 @@
 import { site } from '~/data/site'
 
 const featureIconId: Record<string, string> = {
-  'Шиномонтаж легковых': 'lucide:circle',
+  'Шиномонтаж легковых': 'solar:wheel-angle-outline',
   'Балансировка колёс': 'lucide:scale',
-  'Прокатка литых и стальных дисков': 'lucide:circle-dashed',
+  'Прокатка литых и стальных дисков': 'mynaui:wheel',
   'Аргонная сварка дисков': 'lucide:flame',
   'Сезонное хранение шин': 'lucide:warehouse',
   'Вулканизация': 'lucide:bandage',

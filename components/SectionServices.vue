@@ -2,7 +2,7 @@
 import { site } from '~/data/site'
 
 const categoryIconId: Record<string, string> = {
-  'Шиномонтаж': 'lucide:circle',
+  'Шиномонтаж': 'solar:wheel-angle-outline',
   'Хранение шин': 'lucide:package',
 }
 
