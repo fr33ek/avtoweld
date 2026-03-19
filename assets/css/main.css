@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+html,
+body {
+  background-color: var(--color-site-bg);
+}
+
+/* Бордово-тёмная схема, скруглённые кнопки (rounded-2xl) */
+@theme {
+  --color-site-bg: #0f0a0c;
+  --color-site-surface: #1a1215;
+  --color-site-card: #241a1e;
+  --color-site-border: #3a2a30;
+  --color-site-muted: #a89ca3;
+  --color-site-text: #faf5f7;
+  --color-site-accent: #b03050;
+  --color-site-accent-hover: #c04060;
+  --shadow-neon: 0 0 20px rgb(176 48 80 / 0.35), 0 0 40px rgb(176 48 80 / 0.2);
+  --color-site-green-neon: #50c878;
+  --shadow-green-neon: 0 0 12px rgb(80 200 120 / 0.4), 0 0 24px rgb(80 200 120 / 0.2);
+}
+
+@layer utilities {
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+  .text-green-neon {
+    color: var(--color-site-green-neon);
+  }
+  .bg-green-neon-20 {
+    background-color: rgb(80 200 120 / 0.2);
+  }
+  .shadow-green-neon {
+    box-shadow: var(--shadow-green-neon);
+  }
+  .logo-on-dark {
+    filter: invert(1) drop-shadow(0 0 10px rgb(176 48 80 / 0.5)) drop-shadow(0 0 24px rgb(176 48 80 / 0.3));
+    transition: filter 0.2s ease;
+  }
+  .logo-on-dark:hover {
+    filter: invert(1) drop-shadow(0 0 14px rgb(176 48 80 / 0.7)) drop-shadow(0 0 32px rgb(176 48 80 / 0.4));
+  }
+}

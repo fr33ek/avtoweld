@@ -1,0 +1,20 @@
+{
+  "name": "avtoweld",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "nuxt": "^4.0.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.0",
+    "tailwindcss": "^4.2.0"
+  }
+}
