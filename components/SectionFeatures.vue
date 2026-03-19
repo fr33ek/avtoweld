@@ -22,10 +22,10 @@ const svgAttrs = {
 } as const
 
 const iconDefs: Record<string, { d?: string; paths?: string[] }> = {
-  tire: { paths: ['M12 4v16', 'M6 8h12v8H6z', 'M9 12h6'] },
-  balance: { paths: ['M12 2v4M12 18v4M2 12h4M18 12h4', 'm4.93 4.93 2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83', 'M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z'] },
-  disk: { paths: ['M12 2v4M12 18v4M2 12h4M18 12h4', 'M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83', 'circle cx=12 cy=12 r=6'] },
-  welding: { paths: ['M12 2v6l4 2', 'M12 22v-6l4-2', 'M4 8l4 2v4L4 16', 'M20 8l-4 2v4l4 2', 'M12 12a3 3 0 1 1 0 6 3 3 0 0 1 0-6z'] },
+  tire: { paths: ['circle cx=12 cy=12 r=9', 'circle cx=12 cy=12 r=5'] },
+  balance: { paths: ['circle cx=12 cy=12 r=8', 'circle cx=12 cy=3.5 r=1.5', 'circle cx=20.5 cy=12 r=1.5', 'circle cx=12 cy=20.5 r=1.5', 'circle cx=3.5 cy=12 r=1.5'] },
+  disk: { paths: ['circle cx=12 cy=12 r=8', 'M12 12L12 4', 'M12 12L19 10', 'M12 12L17 19', 'M12 12L7 19', 'M12 12L5 10', 'circle cx=12 cy=12 r=2'] },
+  welding: { paths: ['M19 5L10 14L6 18', 'M6 18L4 22', 'M6 18L6 23', 'M6 18L8 22', 'M5 17L5 21', 'M7 17L7 21'] },
   storage: { paths: ['M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', 'M9 22V12h6v10'] },
   nitrogen: { paths: ['M12 2v4M12 18v4', 'M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83', 'M2 12h4M18 12h4', 'M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83', 'circle cx=12 cy=12 r=3'] },
   vulcanization: { paths: ['M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z', 'M9 10h6v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4z'] },
