@@ -22,11 +22,11 @@ body {
   --color-teal: #2dd4bf;
   --color-teal-soft: #5eead4;
   --color-teal-bg: rgb(45 212 191 / 0.2);
-  /* Оплата: наличные — тёплый тон, карта — бирюзовый */
-  --color-payment-cash: #f59e0b;
-  --color-payment-cash-bg: rgb(245 158 11 / 0.2);
-  --color-payment-card: #14b8a6;
-  --color-payment-card-bg: rgb(20 184 166 / 0.2);
+  /* Оплата: наличные — зелёный, карта — жёлтый */
+  --color-payment-cash: #22c55e;
+  --color-payment-cash-bg: rgb(34 197 94 / 0.2);
+  --color-payment-card: #f59e0b;
+  --color-payment-card-bg: rgb(245 158 11 / 0.2);
 }
 
 @layer utilities {
