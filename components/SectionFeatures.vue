@@ -8,7 +8,7 @@ const featureIconId: Record<string, string> = {
   'Прокатка литых и стальных дисков': 'disk',
   'Аргонная сварка дисков': 'welding',
   'Сезонное хранение шин': 'storage',
-  'Вулканизация': 'nitrogen',
+  'Вулканизация': 'vulcanization',
   'Предварительная запись': 'calendar',
 }
 
@@ -28,6 +28,7 @@ const iconDefs: Record<string, { d?: string; paths?: string[] }> = {
   welding: { paths: ['M12 2v6l4 2', 'M12 22v-6l4-2', 'M4 8l4 2v4L4 16', 'M20 8l-4 2v4l4 2', 'M12 12a3 3 0 1 1 0 6 3 3 0 0 1 0-6z'] },
   storage: { paths: ['M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', 'M9 22V12h6v10'] },
   nitrogen: { paths: ['M12 2v4M12 18v4', 'M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83', 'M2 12h4M18 12h4', 'M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83', 'circle cx=12 cy=12 r=3'] },
+  vulcanization: { paths: ['M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z', 'M9 10h6v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4z'] },
   calendar: { paths: ['M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z', 'M16 2v4M8 2v4M3 10h18'] },
   fallback: { d: 'M5 13l4 4L19 7' },
 }
@@ -72,10 +73,10 @@ const paymentItems = [
   <section class="border-t border-site-border bg-site-surface px-4 py-16 md:py-20">
     <div class="mx-auto max-w-6xl">
       <h2 class="text-center text-3xl font-bold text-white md:text-4xl">
-        В сервисе
+        Возможности
       </h2>
       <p class="mx-auto mt-4 max-w-2xl text-center text-site-muted">
-        Услуги и возможности
+        Что мы делаем
       </p>
       <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <li

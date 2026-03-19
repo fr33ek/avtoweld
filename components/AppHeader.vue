@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
 const nav = [
-  { label: 'Услуги', hash: '#services' },
-  { label: 'Преимущества', hash: '#features' },
+  { label: 'Цены', hash: '#services' },
+  { label: 'Возможности', hash: '#features' },
   { label: 'Контакты', hash: '#contacts' },
 ]
 const open = ref(false)
