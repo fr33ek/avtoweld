@@ -13,7 +13,7 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
             :alt="site.name"
             width="120"
             height="40"
-            class="logo-on-dark h-8 w-auto object-contain"
+            class="logo-on-dark h-9 w-auto object-contain md:h-10"
           />
           <p class="mt-2 text-sm text-site-muted">{{ site.tagline }}</p>
         </div>
