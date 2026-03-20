@@ -4,7 +4,8 @@ import { organizationJsonLd, siteMetaDescription } from '~/data/seo'
 
 const title = `${site.name} — ${site.tagline}`
 const desc = siteMetaDescription()
-const ogImage = `${site.siteUrl.replace(/\/$/, '')}/logo.png`
+const siteBase = site.siteUrl.replace(/\/$/, '')
+const ogImage = `${siteBase}/og-image.png`
 
 useHead({
   title,
@@ -15,6 +16,8 @@ useHead({
     { property: 'og:title', content: title },
     { property: 'og:description', content: desc },
     { property: 'og:image', content: ogImage },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
     { property: 'og:locale', content: 'ru_RU' },
   ],
   link: [{ rel: 'canonical', href: site.siteUrl }],

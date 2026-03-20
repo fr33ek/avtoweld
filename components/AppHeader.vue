@@ -18,9 +18,9 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
         <img
           :src="`${baseURL}logo.png`"
           :alt="site.name"
-          width="140"
-          height="44"
-          class="logo-on-dark h-10 w-auto rounded-2xl object-contain md:h-12"
+          width="160"
+          height="160"
+          class="logo-on-dark h-10 w-auto object-contain md:h-12"
           fetchpriority="high"
         />
       </NuxtLink>

@@ -9,9 +9,9 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
       <img
         :src="`${baseURL}logo.png`"
         :alt="site.name"
-        width="200"
-        height="64"
-        class="logo-on-dark mx-auto mb-6 h-20 w-auto rounded-2xl object-contain md:h-28"
+        width="320"
+        height="320"
+        class="logo-on-dark mx-auto mb-8 h-24 w-auto object-contain md:mb-10 md:h-32"
       />
       <h1 class="sr-only">{{ site.name }}</h1>
       <div
