@@ -60,8 +60,10 @@ body {
   .text-payment-card {
     color: var(--color-payment-card);
   }
-  /* Логотип для тёмного фона: AVTO красное, остальное белое (без инверсии) */
+  /* Логотип: белый на прозрачном + неон как у кнопок (бордо #b03050) */
   .logo-on-dark {
-    /* без filter — цвета из logo.png */
+    filter: drop-shadow(0 0 8px rgb(176 48 80 / 0.85))
+      drop-shadow(0 0 20px rgb(176 48 80 / 0.5))
+      drop-shadow(0 0 36px rgb(176 48 80 / 0.25));
   }
 }

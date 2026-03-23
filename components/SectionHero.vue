@@ -7,10 +7,10 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
   <section class="relative overflow-hidden border-b border-site-border bg-site-surface px-4 py-16 md:py-24">
     <div class="mx-auto max-w-6xl text-center">
       <img
-        :src="`${baseURL}logo.png`"
+        :src="`${baseURL}logo.png?v=3`"
         :alt="site.name"
-        width="400"
-        height="400"
+        width="1024"
+        height="687"
         class="logo-on-dark mx-auto mb-8 h-32 w-auto object-contain md:mb-10 md:h-40"
       />
       <h1 class="sr-only">{{ site.name }}</h1>

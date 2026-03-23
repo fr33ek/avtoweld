@@ -16,10 +16,10 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
       <NuxtLink to="/" class="flex items-center gap-3">
         <img
-          :src="`${baseURL}logo.png`"
+          :src="`${baseURL}logo.png?v=3`"
           :alt="site.name"
-          width="200"
-          height="200"
+          width="1024"
+          height="687"
           class="logo-on-dark h-12 w-auto object-contain md:h-14"
           fetchpriority="high"
         />

@@ -9,7 +9,7 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
       <div class="grid gap-8 md:grid-cols-3">
         <div>
           <img
-            :src="`${baseURL}logo.png`"
+            :src="`${baseURL}logo.png?v=3`"
             :alt="site.name"
             width="120"
             height="40"
