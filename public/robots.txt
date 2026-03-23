@@ -1,0 +1,5 @@
+# https://fr33ek.github.io/avtoweld/
+User-agent: *
+Allow: /
+
+Sitemap: https://fr33ek.github.io/avtoweld/sitemap.xml

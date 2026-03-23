@@ -1,5 +1,24 @@
 import { site } from './site'
 
+/** Ключевые слова для meta keywords (через запятую) */
+export function siteMetaKeywords (): string {
+  return [
+    'шиномонтаж',
+    'Санкт-Петербург',
+    'СПб',
+    site.name,
+    'балансировка колёс',
+    'прокатка дисков',
+    'сварка дисков',
+    'аргонная сварка',
+    'ремонт дисков',
+    'хранение шин',
+    'вулканизация',
+    'Елизаровская',
+    'Большой Смоленский',
+  ].join(', ')
+}
+
 export function siteMetaDescription(): string {
   const sched = [site.scheduleLines.join('. '), site.scheduleNote].filter(Boolean).join('. ')
   return `Шиномонтаж ${site.name} на ${site.address.street}. ${sched ? sched + '. ' : ''}Балансировка, прокатка дисков, ремонт. Тел. ${site.contacts.phone}.`

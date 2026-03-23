@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
-import { siteMetaDescription } from './data/seo'
+import { siteMetaDescription, siteMetaKeywords } from './data/seo'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-03-17',
@@ -20,6 +20,7 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: siteMetaDescription() },
+        { name: 'keywords', content: siteMetaKeywords() },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

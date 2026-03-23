@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { site } from '~/data/site'
-import { organizationJsonLd, siteMetaDescription } from '~/data/seo'
+import { organizationJsonLd, siteMetaDescription, siteMetaKeywords } from '~/data/seo'
 
 const title = `${site.name} — ${site.tagline}`
 const desc = siteMetaDescription()
@@ -11,6 +11,7 @@ useHead({
   title,
   meta: [
     { name: 'description', content: desc },
+    { name: 'keywords', content: siteMetaKeywords() },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: site.siteUrl },
     { property: 'og:title', content: title },
@@ -20,7 +21,10 @@ useHead({
     { property: 'og:image:height', content: '630' },
     { property: 'og:locale', content: 'ru_RU' },
   ],
-  link: [{ rel: 'canonical', href: site.siteUrl }],
+  link: [
+    { rel: 'canonical', href: site.siteUrl },
+    { rel: 'sitemap', type: 'application/xml', href: `${siteBase}/sitemap.xml` },
+  ],
   script: [
     {
       type: 'application/ld+json',
