@@ -23,6 +23,7 @@ function loadYmapsScript(key: string): Promise<void> {
     const script = document.createElement('script')
     script.src = `https://api-maps.yandex.ru/v3/?apikey=${encodeURIComponent(key)}&lang=ru_RU`
     script.async = true
+    // Referer только origin — совпадает с ограничением ключа в кабинете Яндекса (см. README)
     script.referrerPolicy = 'origin'
     script.onload = () => resolve()
     script.onerror = () => reject(new Error('Yandex Maps script load failed'))
@@ -84,9 +85,14 @@ function initMap(container: HTMLElement) {
     })
 }
 
-watch(mapContainer, (el) => {
-  if (apiKey && el) initMap(el)
-}, { immediate: true })
+// Контейнер появляется после ClientOnly; flush: 'post' — ref уже на смонтированном DOM (как на ТехПарке)
+watch(
+  () => mapContainer.value,
+  (el) => {
+    if (apiKey && el) initMap(el)
+  },
+  { immediate: true, flush: 'post' },
+)
 
 onMounted(() => {
   if (!apiKey) mapReady.value = true
@@ -111,7 +117,7 @@ onMounted(() => {
         >
           <div class="rounded-[20px] border-[6px] border-[#1a1a1f] bg-[#0c0c10] p-2 shadow-[inset_0_2px_8px_rgba(0,0,0,0.5),0_4px_20px_rgba(0,0,0,0.4)]">
             <div
-              class="relative overflow-hidden rounded-2xl border border-site-border/80 bg-site-card"
+              class="relative overflow-hidden rounded-xl border border-site-border/80 bg-site-card"
               style="height: 400px; min-height: 400px"
             >
               <div
@@ -133,7 +139,7 @@ onMounted(() => {
                 @click="mapActive = true"
                 @keydown.enter.space.prevent="mapActive = true"
               >
-                <span class="rounded-2xl bg-site-card/90 px-4 py-2 text-sm font-medium text-site-muted shadow-lg ring-1 ring-site-border">
+                <span class="rounded-lg bg-site-card/90 px-4 py-2 text-sm font-medium text-site-muted shadow-lg ring-1 ring-site-border">
                   Нажмите, чтобы управлять картой
                 </span>
               </div>

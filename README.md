@@ -25,7 +25,18 @@ npm run generate
 1. В настройках репозитория: **Settings → Pages → Build and deployment** — Source: **GitHub Actions**.
 2. При пуше в `main` workflow `Deploy to GitHub Pages` собирает сайт и публикует его.
 
-Опционально в секретах репозитория задайте `NUXT_PUBLIC_YANDEX_MAPS_API_KEY` для интерактивной карты (без ключа показывается ссылка на Яндекс.Карты).
+### Карта Яндекса на сайте
+
+Без ключа в блоке «Как нас найти» показывается только **ссылка** на Яндекс.Карты, не встраиваемая карта.
+
+1. Секрет **`NUXT_PUBLIC_YANDEX_MAPS_API_KEY`** в **Settings → Secrets and variables → Actions** (тот же ключ можно использовать, что и для ТехПарка, если ограничения по Referer это допускают).
+2. В [кабинете разработчика Яндекса](https://developer.tech.yandex.ru/) для ключа **JavaScript API** в **HTTP Referer** укажите:
+   - для **GitHub Pages:** `https://fr33ek.github.io` (или полный URL с путём, если так настроено в кабинете);
+   - для **своего домена** (например `https://avtoweld.ru`): добавьте этот origin;
+   - для **localhost** — для разработки.
+3. Локально: скопируйте `.env.example` в `.env` и задайте `NUXT_PUBLIC_YANDEX_MAPS_API_KEY=...`, затем `npm run dev` / `npm run generate`.
+
+В коде загрузка скрипта карты с **`referrerPolicy: origin`**, чтобы Referer совпадал с настройкой ключа по домену без пути (как на ТехПарке).
 
 ## Деплой на свой хостинг по FTP
 
