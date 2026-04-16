@@ -20,6 +20,12 @@ export const site = {
     telegram: '',
   },
 
+  /** Смежный автосервис */
+  technopark: {
+    url: 'https://тех-парк.рф/',
+    label: 'Автосервис',
+  },
+
   scheduleLines: ['Ежедневно: 09:00–20:00'] as const,
   scheduleNote: '',
 

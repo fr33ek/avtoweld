@@ -86,6 +86,17 @@ const baseURL = useRuntimeConfig().app.baseURL || '/'
           Адрес и карта
         </a>
       </div>
+      <div class="mt-4 flex flex-wrap items-center justify-center">
+        <a
+          :href="site.technopark.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-2xl bg-site-accent px-6 py-3 text-lg font-medium text-white shadow-neon transition hover:bg-site-accent-hover hover:shadow-neon"
+        >
+          <Icon name="lucide:wrench" class="h-6 w-6 shrink-0" aria-hidden="true" />
+          {{ site.technopark.label }}
+        </a>
+      </div>
       <div class="mt-8 mx-auto inline-flex items-center gap-3 rounded-2xl border border-site-border bg-site-card px-4 py-3">
         <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-site-accent/20 text-site-accent">
           <Icon name="lucide:clock" class="h-5 w-5" aria-hidden="true" />
