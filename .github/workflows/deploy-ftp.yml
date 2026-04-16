@@ -1,0 +1,50 @@
+# Деплой на хостинг (ISPmanager и т.п.) по FTP после статической сборки Nuxt.
+# Работает и для приватных репозиториев (лимит минут GitHub Actions на бесплатном тарифе — см. документацию GitHub).
+name: Deploy to hosting (FTP)
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      # Свой домен в корне FTP: baseURL в nuxt.config по умолчанию '/'.
+      # Подпапка на сервере: в env ниже задайте NUXT_APP_BASE_URL: /папка/
+      - name: Generate static site
+        run: npm run generate
+        env:
+          NODE_ENV: production
+          NUXT_PUBLIC_YANDEX_MAPS_API_KEY: ${{ secrets.NUXT_PUBLIC_YANDEX_MAPS_API_KEY }}
+
+      - name: Normalize FTP path
+        run: |
+          dir="${{ secrets.FTP_REMOTE_DIR }}"
+          echo "FTP_SERVER_DIR=${dir%/}/" >> $GITHUB_ENV
+
+      # При необходимости FTPS: в этом блоке добавь строку protocol: ftps-legacy (см. README)
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./.output/public/
+          server-dir: ${{ env.FTP_SERVER_DIR }}
+          dangerous-clean-slate: false
+          log-level: verbose
