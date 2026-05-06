@@ -15,8 +15,8 @@ export const site = {
   },
 
   contacts: {
-    phone: '+7 (963) 246-77-75',
-    phoneRaw: '+79632467775',
+    phone: '+7 (967) 513-13-81',
+    phoneRaw: '+79675131381',
     telegram: '',
   },
 
